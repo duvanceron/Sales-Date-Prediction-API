@@ -2,8 +2,8 @@
 
 namespace Sales_Date_Prediction.Interface
 {
-	public interface IproductRepository
+	public interface IProductRepository
 	{
-		Task<IEnumerable<ProductDTO>> GetAllEmployeesAsync();
+		Task<IEnumerable<ProductDTO>> GetAllProductsAsync();
 	}
 }

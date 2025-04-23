@@ -3,8 +3,9 @@ using Sales_Date_Prediction.Interface;
 
 namespace Sales_Date_Prediction.Controllers
 {
-	[Route("api/[controller]")]
 	[ApiController]
+	[Route("api/[controller]")]
+
 	public class OrdersController:ControllerBase
 	{
 

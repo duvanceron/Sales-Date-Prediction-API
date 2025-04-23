@@ -3,7 +3,8 @@ using Sales_Date_Prediction.Interface;
 
 namespace Sales_Date_Prediction.Controllers
 {
-	
+	[ApiController]
+	[Route("api/[controller]")]
 	public class ShippersController : ControllerBase
 	{
 		private readonly IShipperRepository _shipperRepository;

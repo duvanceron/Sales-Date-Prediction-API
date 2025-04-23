@@ -10,6 +10,7 @@ namespace Sales_Date_Prediction
 		public DbSet<Order> Orders { get; set; }
 		public DbSet<Employee> Employees { get; set; }
 		public DbSet<Shipper> Shippers { get; set; }
+		public DbSet<Product> Products { get; set; }
 
 		public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
 		{
