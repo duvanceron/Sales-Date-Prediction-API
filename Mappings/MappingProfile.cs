@@ -9,6 +9,10 @@ namespace Sales_Date_Prediction.Mappings
 		public MappingProfile()
 		{
 			CreateMap<PredictedOrderDTO, PredictedOrderDTO>();
+			CreateMap<Order, OrderDTO>();
+			CreateMap<Employee, EmployeeDTO>()
+					.ForMember(Edto => Edto.NameEmployee, opt => opt.MapFrom(E => E.Firstname + " " + E.Lastname));
+			CreateMap<Shipper, ShipperDTO>();
 
 		}
 	}

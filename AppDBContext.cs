@@ -8,6 +8,9 @@ namespace Sales_Date_Prediction
 	{
 		public DbSet<Customer> Customers { get; set; }
 		public DbSet<Order> Orders { get; set; }
+		public DbSet<Employee> Employees { get; set; }
+		public DbSet<Shipper> Shippers { get; set; }
+
 		public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
 		{
 		}
@@ -17,6 +20,8 @@ namespace Sales_Date_Prediction
 			base.OnModelCreating(modelBuilder);
 			modelBuilder.Entity<PredictedOrderDTO>().HasNoKey();
 			modelBuilder.Entity<Order>().ToTable("Orders", schema: "Sales");
+			modelBuilder.Entity<Employee>().ToTable("Employees", schema: "HR");
+			modelBuilder.Entity<Shipper>().ToTable("Shippers", schema: "Sales");
 
 		}
 	}

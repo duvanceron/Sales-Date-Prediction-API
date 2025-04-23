@@ -3,8 +3,8 @@ using Sales_Date_Prediction.Models;
 
 namespace Sales_Date_Prediction.Interface
 {
-	public interface IOrderRepository
+	public interface IEmployeeRepository
 	{
-		Task<IEnumerable<OrderDTO>> GetAllOrdersByCustomerAsync(int Custid);
+		Task<IEnumerable<EmployeeDTO>> GetAllEmployeesAsync();
 	}
 }
