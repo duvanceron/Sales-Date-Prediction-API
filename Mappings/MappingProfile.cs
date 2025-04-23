@@ -14,6 +14,10 @@ namespace Sales_Date_Prediction.Mappings
 					.ForMember(Edto => Edto.NameEmployee, opt => opt.MapFrom(E => E.Firstname + " " + E.Lastname));
 			CreateMap<Shipper, ShipperDTO>();
 			CreateMap<Product, ProductDTO>();
+			CreateMap<OrderWithDetailDTO, Order>()
+			.ForMember(dest => dest.OrderDetails, opt => opt.Ignore());
+
+			CreateMap<OrderWithDetailDTO, OrderDetail>();
 
 		}
 	}

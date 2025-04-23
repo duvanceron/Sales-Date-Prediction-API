@@ -11,6 +11,7 @@ namespace Sales_Date_Prediction
 		public DbSet<Employee> Employees { get; set; }
 		public DbSet<Shipper> Shippers { get; set; }
 		public DbSet<Product> Products { get; set; }
+		public DbSet<OrderDetail> OrderDetails { get; set; }
 
 		public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
 		{
@@ -23,6 +24,8 @@ namespace Sales_Date_Prediction
 			modelBuilder.Entity<Order>().ToTable("Orders", schema: "Sales");
 			modelBuilder.Entity<Employee>().ToTable("Employees", schema: "HR");
 			modelBuilder.Entity<Shipper>().ToTable("Shippers", schema: "Sales");
+			modelBuilder.Entity<Product>().ToTable("Products", schema: "Production");
+			modelBuilder.Entity<Product>().ToTable("OrderDetails", schema: "Sales");
 
 		}
 	}
