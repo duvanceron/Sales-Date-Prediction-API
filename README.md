@@ -23,3 +23,5 @@ Sales-Date-Prediction/ │ ├── Controllers/ ├── DTOs/ ├── Mode
 ```bash
 git clone git@github.com:duvanceron/Sales-Date-Prediction.git
 git checkout master
+
+# Sales-Date-Prediction
