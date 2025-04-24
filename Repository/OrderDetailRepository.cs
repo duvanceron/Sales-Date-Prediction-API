@@ -12,9 +12,18 @@ namespace Sales_Date_Prediction.Repository
 		}
 		public async Task CreateOrderDetail(OrderDetail order)
 		{
-			_context.OrderDetails.Add(order);
-			await _context.SaveChangesAsync();
-		}
-	}
+			try
+			{
+				_context.OrderDetails.Add(order);
+				await _context.SaveChangesAsync();
+			}
+			catch (Exception ex)
+			{
+				// Log the exception (ex) here if needed
+				throw new Exception($"Error while creating order detail {ex}");
 
+			}
+		}
+
+	}
 }

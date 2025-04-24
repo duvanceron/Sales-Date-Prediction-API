@@ -25,7 +25,7 @@ namespace Sales_Date_Prediction
 			modelBuilder.Entity<Employee>().ToTable("Employees", schema: "HR");
 			modelBuilder.Entity<Shipper>().ToTable("Shippers", schema: "Sales");
 			modelBuilder.Entity<Product>().ToTable("Products", schema: "Production");
-			modelBuilder.Entity<Product>().ToTable("OrderDetails", schema: "Sales");
+			modelBuilder.Entity<OrderDetail>().ToTable("OrderDetails", schema: "Sales");
 
 		}
 	}
