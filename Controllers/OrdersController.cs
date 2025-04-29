@@ -2,6 +2,8 @@
 using Sales_Date_Prediction.DTO;
 using Sales_Date_Prediction.Interface;
 using Sales_Date_Prediction.Models;
+using Sales_Date_Prediction.Models.Response;
+using System.Net;
 
 namespace Sales_Date_Prediction.Controllers
 {
@@ -30,10 +32,11 @@ namespace Sales_Date_Prediction.Controllers
 		{
 			if (order == null)
 			{
-				return BadRequest("Order or OrderDetail cannot be null");
+				return BadRequest(ApiResponse<OrderWithDetailDTO>.ErrorResponse("Order or OrderDetail cannot be null", HttpStatusCode.BadRequest));
+
 			}
 			await _orderRepository.CreateOrderWithProducts(order);
-			return Ok("The order was created");
+			return Ok(ApiResponse<OrderWithDetailDTO>.SuccessResponse(order, "Pedido creado correctamente"));
 		}
 
 	}

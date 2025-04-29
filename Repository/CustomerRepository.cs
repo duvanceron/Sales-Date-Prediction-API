@@ -44,6 +44,7 @@ namespace Sales_Date_Prediction.Repository
                 GROUP BY custid
             )
             SELECT 
+	            C.custid,
                 C.companyname AS CustomerName,
                 AO.LastOrderDate, 
                 DATEADD(DAY, AO.AVGDays, AO.LastOrderDate) AS NextPredictedOrder
